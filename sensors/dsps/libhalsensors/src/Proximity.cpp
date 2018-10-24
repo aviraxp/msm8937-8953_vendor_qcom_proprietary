@@ -41,6 +41,7 @@ void Proximity::setSensorInfo(sns_smgr_sensor_datatype_info_s_v01* sensor_dataty
     if(bWakeUp == false) {
         setFlags(SENSOR_FLAG_ON_CHANGE_MODE);
         strlcat(name, " -Non Wakeup", sizeof(name));
+        setResBufferedSamples(300);
     }
     else {
         setFlags(SENSOR_FLAG_ON_CHANGE_MODE|SENSOR_FLAG_WAKE_UP);
